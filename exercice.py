@@ -1,19 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+liste_fruit = ["pomme", "poire", "banane", "fraise", "peche"]
+liste_legume = ["celeri", "patate", "brocoli", "chou", "patate douce", "carotte"]
+
+# Ne modifiez pas le code ci-dessus
+
+dictionnaire = {(f"{legume}{i+j}" for fruit in liste_fruit for legume in liste_legume if fruit != "poire" else f"{fruit}{i+j}") : ("legume" for fruit in liste_fruit for legume in liste_legume if fruit != "poire" else "fruit")}
+
+print(dictionnaire)
 
 
 def order(values: list = None) -> list:
-    if values is None:
+    liste = []
+    for i in range(10):
         # TODO: demander les valeurs ici
-        pass
-
-    return []
+        liste.append(input('Entrez le prochain élément\n'))
+    print(liste)
+    return liste
 
 
 def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: demander les mots ici
-        pass
+        words = []
+        word = input('Entrez un mot : \n')
+        for i in word:
+            words.append(i)
 
     return False
 
